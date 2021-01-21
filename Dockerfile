@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 
-RUN pip install -r requirements.txt
+RUN pip install -r djangox/dprojx/requirements.txt
 
 EXPOSE 8000
 CMD gunicorn dprojx.wsgi:application --bind 0.0.0.0:$PORT
