@@ -8,8 +8,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image...          
-      - docker build -t needify-ecr .
+      - echo Building the Docker image...   
+      - echo ls -altr
+      - echo pwd       
+      - docker build -t 686062870083.dkr.ecr.us-west-2.amazonaws.com/needify-ecr:latest .
       - docker tag needify-ecr:latest 686062870083.dkr.ecr.us-west-2.amazonaws.com/needify-ecr:latest     
   post_build:
     commands:
