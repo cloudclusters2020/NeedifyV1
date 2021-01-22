@@ -17,19 +17,3 @@ Resources:
         LoadBalancerInfo: 
           ContainerName: "needifyecscontainer" # Specify the name of your Amazon ECS application's container
           ContainerPort: "8000" # Specify the port for your container where traffic reroutes 
-# Optional properties
-        PlatformVersion: "" # Specify the version of your Amazon ECS Service
-        NetworkConfiguration:
-          AwsvpcConfiguration:
-            Subnets: ["",""] # Specify one or more comma-separated subnets in your Amazon ECS service
-            SecurityGroups: ["",""] # Specify one or more comma-separated security groups in your Amazon ECS service
-            AssignPublicIp: "" # Specify "ENABLED" or "DISABLED"             
-# (Optional) In the Hooks section, specify a validation Lambda function to run during 
-# a lifecycle event. 
-Hooks:
-# Hooks for Amazon ECS deployments are:
-    - BeforeInstall: "LambdaFunctionToValidateBeforeInstall" # Specify a Lambda function name or ARN
-    - AfterInstall: "LambdaFunctionToValidateAfterTraffic" # Specify a Lambda function name or ARN
-    - AfterAllowTestTraffic: "LambdaFunctionToValidateAfterTestTrafficStarts" # Specify a Lambda function name or ARN
-    - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeAllowingProductionTraffic" # Specify a Lambda function name or ARN
-    - AfterAllowTraffic: "LambdaFunctionToValidateAfterAllowingProductionTraffic" # Specify a Lambda function name or ARN
