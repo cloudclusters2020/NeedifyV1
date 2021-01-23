@@ -18,6 +18,8 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push 686062870083.dkr.ecr.us-west-2.amazonaws.com/needify-ecr:latest
-      - printf '[{"name":"needifyecscontainer","imageUri":"686062870083.dkr.ecr.us-west-2.amazonaws.com/needify-ecr"}]' > imagedefinitions.json
-      - cat imagedefinitions.json
-
+      - printf '[{"ImageURI":"686062870083.dkr.ecr.us-west-2.amazonaws.com/needify-ecr"}]' > imageDetail.json
+      - cat imageDetail.json
+  artifacts:
+    files:
+      - imageDetail.json
